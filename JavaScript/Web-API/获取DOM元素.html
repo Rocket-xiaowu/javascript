@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">123</div>
+  <div class="box">123</div>
+  <div class="box">123</div>
+  <div class="box">123</div>
+  <ul id="nav">
+    <li>测试一</li>
+    <li>测试二</li>
+    <li>测试三</li>
+  </ul>
+  <script>
+    //1.获取第一个匹配的元素
+    // const box = document.querySelector('div')
+    // console.log(box)
+
+    //2.获取所有匹配的标签,返回值是伪数组
+    // 有长度有索引号，但是没有pop，push等方法
+    // 哪怕只匹配了一个元素，querySelectorAll获取到的也是数组
+    // const all_box = document.querySelectorAll('div')
+    // console.log(all_box)
+
+    // 3.遍历返回的数组
+    const lis = document.querySelectorAll('ul li')
+    // console(li)
+    for (let i = 0; i < lis.length; i++) {
+      console.log(lis[i])//每一个li对象
+    }
+
+    //其他方法（少用）
+    //根据id获取一个元素
+    const method_id = document.getElementById('nav')
+    console.log(method_id)
+
+    //根据标签获取，例：获取所有div,返回是数组
+    const method_name = document.getElementsByTagName('div')
+    console.log(method_name)
+
+    //根据类名获取所有具有该类名的元素
+    //返回数组
+    const method_class = document.getElementsByClassName('box')
+    console.log(method_class)
+  </script>
+</body>
+
+</html>

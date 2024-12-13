@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 隐式转换
+    /* 有加号的运算中，所有类型都会变成字符串型
+    除了+作为正号时，此时会将后面的元素转换为Number类型
+    -、*、/都可以将其他类型转换为数字型 */
+
+    //显示转换
+    // 使用关键字转换
+    // 1.Number() 
+    let str='-123.9'
+    document.write(Number(str))
+    // 此时str被转换成了数字123
+    // 当无法转换时，会变成NaN，NaN其实也是number类型，只是它表示非数字而已
+
+    // document.write(parseInt(str))
+    /* 转换成整数，直到第一个不是数的出现，
+    若第一个不是数，则变成NaN */
+    
+    // 3.parseFloat
+    /* 可以识别小数，整数不受影响，直到第一个不是数的出现结束，
+    若第一个不是数，则变成NaN */
+  </script>
+</body>
+</html>

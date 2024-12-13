@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .box {
+      border-radius: 50%;
+    }
+
+    .nav {
+      color: red;
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">1234</div>
+  <script>
+    // 1.通过style属性修改元素样式
+    // const box = document.querySelector('.box')
+    // box.style.width = '600px'
+    // 不用-，会被解析为减号，使用小驼峰命名法
+    // box.style.backgroundColor = 'green'
+
+
+    //修改样式过多时，由于style导致代码量过大，
+    // 2.可以使用 className 类名来修改
+    const div = document.querySelector('div')
+    // div.className = 'nav'//用新的类名覆盖原来的类名
+    // div.className = 'box nav'//可以保留之前的类名，并添加新类名
+
+
+    //3.classlist,追加或者删除类
+    //(1)增加类名 add()类名不加点，并且是字符串
+    div.classList.add('nav')
+    //(2)删除类 remove()
+    div.classList.remove('box')
+    //(3)切换类 toggle() 有就删掉(切换走)，没有就加上（切换上）
+    div.classList.toggle('box')
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">我是文字内容</div>
+  <script>
+    const box = document.querySelector('.box')
+    // console.log(box.innerText)//作用：获取文字内容，输出为我是文字内容
+    //修改
+    // box.innerText = '我是修改后的文字'
+    // console.log(box.innerText)
+    //innerText不会解析标签，显示的是纯文本
+    //示例：结果不会加粗文字，会将标签原样输出
+    // box.innerText='<strong>我是修改后的文字</strong>'
+
+    //innerHTML,可以解析标签，多标签建议使用模版字符串
+    box.innerHTML = '<strong>我是解析后的标签</strong>'
+    console.log(box.innerHTML)
+  </script>
+</body>
+
+</html>

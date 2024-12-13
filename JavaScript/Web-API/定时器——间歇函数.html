@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // setInterval(立即执行函数或者函数名,间隔时间(单位毫秒))
+    // 函数名不用加小括号，要加的话用引号包裹
+    // 打开程序，有一个间隔时间，不是立即执行
+    // 返回值是一个id数字，代表第几个定时器，避免多个定时器相互干扰
+
+    // setInterval(function () {
+    //   document.write(`我执行了n次<br>`)
+    // }, 1000)
+
+    function fn() {
+      document.write(`我执行了n次<br>`)
+    }
+    // setInterval('fn()', 1000)//很少用
+    let n = setInterval(fn, 1000)
+    console.log(n)
+
+    //关闭计时器
+    // clearInterval(id变量)
+    clearInterval(n)
+  </script>
+</body>
+
+</html>

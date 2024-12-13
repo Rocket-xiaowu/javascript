@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //新遍历方法，for—in方法，一般不用来遍历数组，用来遍历对象
+    // let arr = [1, 2, 3]
+    // for (let k in arr) {
+    //   console.log(k)//打印数组下标，且下标是字符串类型的      
+    //   console.log(arr[k])
+    //   console.log(typeof (k))
+    // }
+
+    //遍历对象
+    let obj = {
+      uname: '张三',
+      age: 18,
+      weight: '60kg',
+      gender: '男'
+    }
+    for (let key in obj) {
+      // console.log(key)//k是属性名，且是字符串型的，所以是'uname'
+      console.log(obj[key])
+      // console.log(typeof (key))
+    }
+  </script>
+</body>
+
+</html>

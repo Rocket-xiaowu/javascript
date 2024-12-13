@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //新增
+    //push,在数组后面新增，返回值为增加后数组的长度
+    let arr = [1, 2, 3]
+    // arr.push(4)
+    // document.write(`${arr}<br>`)
+
+    //unshift,在数组前面新增元素，返回值为增加后的长度
+    // arr.unshift(4)
+    // document.write(arr)
+
+    //删除
+    //pop,删除最后一个元素，返回值为删除的元素
+    // arr.pop()
+    // document.write(arr)
+    //shift,删除第一个元素，返回值为删除的元素
+    // arr.shift()
+    // document.write(arr)
+
+    /* splice,删除指定元素，有两个参数，起始位置，删除个数
+    不写删除个数，默认删到最后,返回值是删除的元素 */
+    arr.splice(1, 1)
+    document.write(arr)
+
+  </script>
+</body>
+
+</html>

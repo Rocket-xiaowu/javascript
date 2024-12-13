@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 写法一：该方法其后必须加分号
+    (function (x) {
+      let num = 10
+      document.write(num + x)
+      document.write(`<br>`)
+    })(1);
+    (function (x) {
+      let num = 20
+      document.write(num + x)
+      document.write('<br>')
+    })(1);
+
+    // 写法二:后面可以不加分号
+    (function (x) {
+      let num = 30
+      document.write(num + x)
+      document.write('<br>')
+    }(1))
+  </script>
+</body>
+
+</html>

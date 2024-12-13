@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //属性
+    console.log(Math.PI)//3.141592653589793
+    //方法
+    //ceil 天花板 向上取整
+    console.log(Math.ceil(1.1))//2
+    console.log(Math.ceil(1.7))//2
+    console.log(Math.ceil(-1.1))//-1
+    //floor 地板 向下取整
+    console.log(Math.floor(1.1))//1
+    console.log(Math.floor(1.7))//1
+    console.log(Math.floor(-1.1))//-2
+    //round 四舍五入
+    console.log(Math.round(20.49))//20
+    console.log(Math.round(20.5))//21
+    console.log(Math.round(-20.49))//-20
+    console.log(Math.round(-20.5))//-20
+    console.log(Math.round(-20.51))//-21
+    //max 最大值 min 最小值
+    console.log(Math.max(1, 2, 3, 4, 5))
+    console.log(Math.min(1, 2, 3, 4, 5))
+    //abs 绝对值
+    console.log(Math.abs(-1))
+    //random 随机数 返回值包含于[0,1)
+    //想要0~10之间的随机数，将返回值乘以11(n+1)，再向下取整即可
+    console.log(Math.floor(Math.random() * (10 + 1)))
+
+
+    //取N,M间的数
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1) + N)
+    }
+    document.log(getRandom(4, 8))
+  </script>
+</body>
+
+</html>

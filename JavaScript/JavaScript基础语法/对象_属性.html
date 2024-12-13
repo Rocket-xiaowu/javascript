@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //声明
+    let info = {
+      uname: '张三',
+      age: 18,
+      weight: '60kg',
+      gender: '男'
+    }
+    //查看
+    document.write(`${info.uname}<br>`)
+    document.write(`${info.age}<br>`)
+    document.write(`${info.weight}<br>`)
+    // document.write(`${info.gender}<br>`)
+    document.write(`${info['gender']}<br>`)
+    //改
+    info.weight = '70kg'
+    document.write(`${info.weight}<br>`)
+    //增
+    info.hobby = '喝酒'
+    document.write(`${info.hobby}<br>`)
+    //删
+    delete info.weight
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      text-align: center;
+      line-height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    //点击click
+
+    //鼠标经过mouseenter
+    const div = document.querySelector('div')
+    div.addEventListener('mouseenter', function () {
+      div.innerHTML = '轻轻地我来了'
+    })
+
+    //鼠标离开mouseleave
+    div.addEventListener('mouseleave', function () {
+      div.innerHTML = '轻轻地我走了'
+    })
+  </script>
+</body>
+
+</html>
