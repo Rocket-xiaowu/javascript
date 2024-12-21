@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.边界符
+    // ^ 表示以什么开始， $ 表示以什么结尾
+    /* console.log(/^哈/.test('哈哈'))  //true
+    console.log(/^哈/.test('二哈'))  //false
+    console.log(/^哈$/.test('哈哈')) */  //false,该情况要求只能有一个哈
+
+    //2.量词（表示重复次数）
+    //用来设置某个模式出现的次数
+    // * 表示重复零次或者更多次(>=0)
+    //该情况是精确匹配，但是只允许“哈”出现零次或多次，但是不允许其他字符的出现
+    /*  console.log(/^哈$/.test('哈'))  //true
+     console.log(/^哈*$/.test(''))  //true
+     console.log(/^哈*$/.test('哈哈')) */  //true
+
+    // + 表示大于等于1次
+    /* console.log(/^哈$/.test('哈'))  //true
+    console.log(/^哈+$/.test(''))  //false
+    console.log(/^哈+$/.test('哈哈'))  */ //true
+
+    // ? 表示零次或者一次
+    /* console.log(/^哈$/.test('哈'))  //true
+    console.log(/^哈?$/.test(''))  //true
+    console.log(/^哈?$/.test('哈哈'))  */ //false
+
+    //{n} 表示必须出现n次
+    /* console.log(/^哈{4}$/.test('哈'))  //false
+    console.log(/^哈{4}$/.test('哈哈'))  //false
+    console.log(/^哈{4}$/.test('哈哈哈'))  //false
+    console.log(/^哈{4}$/.test('哈哈哈哈'))  */ //true
+
+    //{n,}表示大于等于n次
+    //{n,m}表示n到m次（包含n，m）
+
+
+    //3.字符类
+    //[]匹配字符集合，内部任意出现一个即可
+    //加了精确匹配，只能选一个，不加无限制
+    console.log(/^[abc]$/.test('a')) //true
+    console.log(/^[abc]$/.test('b')) //true
+    console.log(/^[abc]$/.test('c')) //true
+    console.log(/^[abc]$/.test('ab')) //false
+    console.log(/^[abc]{2}/.test('ab')) //true
+
+    //可以使用连字符表示范围
+    console.log(/^[a-z]$/.test('p'))  //true
+    //并集，必须是字母和数字
+    console.log(/^[a-zA-Z0-9]/.test('1'))  //true
+    //中括号内写 ^ 表示取反
+    // . 代表除了换行之外
+
+
+    //字符类之预定义类
+    //[0-9]——\d
+    //[^0-9](除了0-9的数字)——\D
+    //[A-Za-z0-9_](数字字母下划线)——\w
+    //[^A-Za-z0-9_](除数字字母下划线)——\W
+    //[\t\r\n\v\f](匹配空格)———\s
+    //[^\t\r\n\v\f](匹配非空格)——\S
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //arr 存入的是剩余参数，其 前面 可以写参数，只是多传入的参数存入arr
+    function getSum(...arr) {
+      //arr是数组
+      console.log(arr)
+      let sum = 0
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+      }
+      console.log(sum)
+    }
+    getSum(1, 2, 3, 4, 2, 2, 3, 4)
+  </script>
+</body>
+
+</html>

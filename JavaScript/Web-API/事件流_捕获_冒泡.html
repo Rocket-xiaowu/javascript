@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <script>
+    const father = document.querySelector('.father')
+    const son = document.querySelector('.son')
+    //第三个参数默认是false，表示事件冒泡
+    //当是true时，会表现事件捕获
+    document.addEventListener('click', function () {
+      alert('我是爷爷')
+    })
+    father.addEventListener('click', function () {
+      alert('我是爸爸')
+    })
+    son.addEventListener('click', function (e) {
+      alert('我是儿子')
+
+      //为了避免父元素的影响，可以使用stopPropagation来消除事件冒泡和事件捕获
+      //阻止事件流动,使用事件对象.
+      e.stopPropagation()
+    })
+  </script>
+</body>
+
+</html>

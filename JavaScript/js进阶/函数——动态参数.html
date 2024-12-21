@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //不知道参数的个数，使用动态参数 arguments
+    //不写形参
+    function getSum() {
+      //arguments 是一个伪数组 只存在于函数当中
+      let sum = 0
+      for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i]
+      }
+      console.log(sum)
+    }
+    getSum(2, 3, 10, 5)
+    getSum(1, 2, 3, 4, 2, 2, 3, 4)
+  </script>
+</body>
+
+</html>

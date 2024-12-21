@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>123</p>
+  <script>
+    //抛异常throw,会中止程序
+    /* function sum(x, y) {
+      if (!x || !y) {
+        // throw '参数为空'
+        throw new Error('参数为空')
+      }
+      return x + y
+    }
+    console.log(sum()) */
+
+
+    //捕获错误信息
+    function fn() {
+      try {
+        //可能发生错误的代码，放在try中
+        document.querySelector('.p').style.color = 'red'
+      }
+      catch (err) {
+        //拦截错误，提示浏览器提供的错误信息，但是不会中止程序，下面代码继续运行
+        // console.log(err.message)
+        //可以结合throw使用
+        throw new Error('选择器错误')
+      }
+      finally {
+        //无论是否错误，一定会执行的代码
+        //即使使用throw拦截
+        alert('我们照样可以运行')
+      }
+    }
+    fn()
+
+    //debugger,相当于打断点
+    debugger
+  </script>
+</body>
+
+</html>

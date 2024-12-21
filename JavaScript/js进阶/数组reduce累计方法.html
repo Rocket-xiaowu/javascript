@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //可以没有初始值
+    //语法：arr.reduce(function(上一次值，当前值){}，初始值)
+    const arr = [1, 2, 3, 4]
+    const sum = arr.reduce((prev, current) => prev + current)
+    console.log(sum)
+  </script>
+</body>
+
+</html>

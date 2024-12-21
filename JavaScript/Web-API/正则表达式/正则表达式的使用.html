@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //被检测字符串
+    const str = 'javaScript学习'
+    //1.定义规则
+    const reg = /java/
+    //2.检测,返回值为true、false
+    console.log(reg.test(str))
+    //3.exec(),返回值为数组，未找到返回空数组
+    console.log(reg.exec(str))
+  </script>
+</body>
+
+</html>

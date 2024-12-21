@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //静态方法只有构造函数才有，不是在实例对象身上
+    const o = { uanme: '张三', age: 18 }
+    //1.获取所有属性名，返回值是数组
+    console.log(Object.keys(o))
+    //2.获取所有属性值，返回为数组
+    console.log(Object.values(o))
+
+    //3.对象的拷贝
+    const oo = {}
+    Object.assign(oo, o)
+    console.log(oo)
+    //应用场景：追加属性
+    Object.assign(oo, { gender: '男' })
+    console.log(oo)
+  </script>
+</body>
+
+</html>

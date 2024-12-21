@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // i 不区分大小写(ignor简写)
+    console.log(/^java$/.test('java'))  //true
+    console.log(/^java$/.test('JAVA'))  //false
+    console.log(/^java$/i.test('JAVA'))  //true
+
+    //替换replace，返回值是替换好的字符串,g 是全局查找(global简写)
+    const str = 'java是一门很好的编程语言，快来学习java'
+    const result = str.replace(/java/ig, '前端')
+    console.log(result)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.length，求字符串的长度
+
+    //2.spilt(分割符)，分割字符串，返回值是数组
+    /* const str = '2024-12-29'
+    const arr = str.split('-')
+    console.log(arr)  //['2024', '12', '29'] */
+
+    //3.字符串的截取 substring(indexstart[,indexend])
+    //没有结束，默认截到最后，写了不包含indexend
+    const str = '马上又要考试了'
+    console.log(str.substring(4))
+    console.log(str.substring(4, 6))
+
+    //4. 判断是否以某个字符开头 startWith(查找字符[,起始位置])
+    //起始位置默认是0,返回值为true false
+    console.log(str.startsWith('马上', 0))  //true
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //闭包：内层函数＋外层函数的变量
+    //效果：可以在外层函数之外使用其中的变量
+    /* function outer() {
+      let a = 10
+      function inner() {
+        console.log(a)
+      }
+      return inner
+    }
+
+    const fun = outer()
+    fun()  */ //10
+    //实现了在函数外使用函数内部的变量
+
+    //闭包的应用：实现数据的私有
+    //案例：计算函数被调用的次数
+    //传统写法：
+    /* let i = 0
+    function fn() {
+      i++
+      console.log(`函数被调用了${i}次`)
+    }
+    fn() */
+    //缺点：i可以被随意更改，数据不安全
+
+    //因为闭包的变量是在函数内部，不能被修改，而传统方法声明的是全局变量，可以被修改
+    //闭包形式：
+    function outer() {
+      let i = 0
+      function fn() {
+        i++
+        console.log(`函数被调用了${i}次`)
+      }
+      return fn
+    }
+
+    const fun = outer()
+    fun()
+    //此形式的i，函数结束了并不会被回收，从而引起内存泄漏
+  </script>
+</body>
+
+</html>

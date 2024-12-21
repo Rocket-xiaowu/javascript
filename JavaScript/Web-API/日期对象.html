@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //得到当前的时间
+    const date = new Date()
+    // console.log(date)
+    //得到指定时间
+    // console.log(new Date('2024-12-29 00:00:00'))
+
+
+    //日期对象方法
+    console.log(date.getFullYear())//四位数年份
+    console.log(date.getMonth() + 1)//注意月份返回的是0~11，需要加一
+    console.log(date.getDate())
+    console.log(date.getDay())//0~6，星期天是星期0
+    console.log(date.getHours())
+    console.log(date.getMinutes())
+    console.log(date.getSeconds())
+  </script>
+</body>
+
+</html>

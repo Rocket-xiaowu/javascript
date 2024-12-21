@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //箭头函数本身不会创建this，所以箭头函数的this指向上一级作用域链的this
+    /* const fn = () => {
+      console.log(this)
+    }
+    fn()  //指向window */
+
+    //对象方法箭头函数
+    const obj = {
+      uname: '张三',
+      sayHi: () => console.log(this)
+    }
+    obj.sayHi()  //指向window，因为本身没有this，往上一级obj找，而obj的this是window
+  </script>
+</body>
+
+</html>

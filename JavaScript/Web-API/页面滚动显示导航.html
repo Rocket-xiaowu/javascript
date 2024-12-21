@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 3000px;
+    }
+
+    .elevator {
+      width: 200px;
+      height: 400px;
+      background-color: skyblue;
+      text-align: center;
+      opacity: 0;
+      margin-top: 500px;
+      position: sticky;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="elevator">
+    <span>我是导航栏</span>
+    <button>回到顶部</button>
+  </div>
+  <script>
+    const elevator = document.querySelector('.elevator')
+    const btn = document.querySelector('button')
+    window.addEventListener('scroll', function () {
+      const n = document.documentElement.scrollTop
+      if (n >= 300) {
+        elevator.style.opacity = 1
+      } else {
+        elevator.style.opacity = 0
+      }
+    })
+
+    btn.addEventListener('click', function () {
+      // document.documentElement.scrollTop = 0
+      window.scrollTo(0, 0)
+    })
+  </script>
+</body>
+
+</html>

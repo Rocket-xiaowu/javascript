@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: greenyellow;
+      text-align: center;
+      line-height: 500px;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script src="./lodash.min.js"></script>
+  <script>
+    //节流：在一定时间内只能执行一次
+    //要求：鼠标在盒子上移动，不管移动多少次，每隔500ms才加1
+    const box = document.querySelector('.box')
+    let i = 1
+    function mouseMove() {
+      box.innerHTML = i++
+    }
+    //1.lodash实现_.throttle
+    box.addEventListener('mousemove', _.throttle(mouseMove, 3000))
+
+    //2.底层实现
+    /* function throttle(fn, t) {
+      let timer = null
+      return function () {
+        if (!timer) {
+          timer = setTimeout(function () {
+            fn()
+            //清空定时器
+            timer = null
+          }, t)
+        }
+      }
+    }
+    box.addEventListener('mousemove', throttle(mouseMove, 3000)) */
+  </script>
+</body>
+
+</html>

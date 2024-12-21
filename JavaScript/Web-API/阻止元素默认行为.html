@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="http://www.baidu.com">百度一下</a>
+  <form action="http://www.baidu.com">
+    <input type="submit" value="提交">
+  </form>
+  <script>
+    const form = document.querySelector('form')
+    const baidu = document.querySelector('a')
+    // preventDefault阻止默认的提交，跳转等，只有满足一定条件才会跳转
+    form.addEventListener('submit', function (e) {
+      e.preventDefault()
+    })
+    baidu.addEventListener('click', function (e) {
+      e.preventDefault()
+    })
+  </script>
+</body>
+
+</html>

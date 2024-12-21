@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul')
+    //1.克隆节点 先克隆，再追加
+    //默认是false，只克隆标签，不克隆内容，不常用
+    ul.appendChild(ul.children[0].cloneNode(true))
+
+    //2.删除节点
+    //只能通过被删除元素的父亲删除
+    //示例：删除第五个li
+    ul.removeChild(ul.children[4])
+  </script>
+</body>
+
+</html>

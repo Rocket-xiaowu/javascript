@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.getTime()，需要实例化
+    const date = new Date()
+    console.log(date.getTime())
+
+    //2.+new Date()
+    console.log(+new Date())
+
+    //3.Date.now(),不能指定时间
+    console.log(Date.now())
+
+    //指定时间的时间戳
+    console.log(+new Date('2024-12-29 00:00:00'))
+  </script>
+</body>
+
+</html>

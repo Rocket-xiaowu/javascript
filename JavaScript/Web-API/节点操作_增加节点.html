@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>我是老大</li>
+  </ul>
+  <script>
+    //1.创建节点
+    const div = document.createElement('div')
+    //2.追加节点，确定新增节点的放置位置
+    //插入到父元素的最后一个子元素
+    document.body.appendChild(div)
+    //插入某个子元素的前面
+    const ul = document.querySelector('ul')
+    const li = document.createElement('li')
+    li.innerHTML = '我是新来的'
+    ul.insertBefore(li, ul.children[0])
+  </script>
+</body>
+
+</html>

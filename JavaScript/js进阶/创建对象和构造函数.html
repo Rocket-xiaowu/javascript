@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.字面量创建
+    /* const obj={
+      uname:'张三',
+      age:18
+    } */
+
+    //2.new Object创建
+    /* const obj = new Object({
+      uname: '张三',
+      age: 18
+    }) */
+
+    //3.构造函数创建
+    //new Object实质也是构造函数，只是系统已经构造好了
+    //使用场景：字面量一次只能创建一个对象，构造函数可以快速创建多个类似的对象
+    function Pig(uname, age) {
+      this.uname = uname   //创建对象时this指向创建的对象
+      this.age = age
+    }
+    console.log(new Pig('佩奇', 6))
+    console.log(new Pig('乔治', 7))
+    console.log(new Object())
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //改变this指向的三个方法
+    //1.call()   先写指向，原本的参数写在后面
+    const obj = {
+      uname: '张三'
+    }
+    function fn(x, y) {
+      console.log(this)
+      console.log(x + y)
+    }
+    // fn(1, 2)  //window
+    // fn.call(obj, 1, 2)  //{uname: '张三'}
+
+    //2.apply(),先写指向，不过函数原本的参数要写成数组
+    // fn.apply(window, [1, 2])  //window
+    //应用:由于后面是数组，所以可以用来求数组的最值
+
+    //3.bind(),该方法不会调用函数，只是改变指向，而前两个想改变指向必须调用
+    //返回值是改变了指向的函数（经过改造的原函数）
+    const fun = fn.bind(obj)  //此时改变了this指向，但是函数没有调用
+    fun(1, 2)  //{uname: '张三'}
+  </script>
+</body>
+
+</html>

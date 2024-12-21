@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1 style="text-align: center;color: red;">构造函数，原型对象和对象原型的关系</h1>
+    <img src="../../images/构造函数，原型对象和对象原型.png" alt="">
+  </div>
+  <script>
+    //js面向对象通过构造函数来实现
+    //公共的属性写在构造函数里
+    //公共的方法写在原型对象里，这样实例化时不会反复创建相同的方法，节约空间
+    function Star(uname, age) {
+      this.uname = uname
+      this.age = age
+    }
+    Star.prototype.sing = () => console.log('唱歌')
+    const ldh = new Star('刘德华', 18)
+    const zxy = new Star('张学友', 19)
+    //此时两个对象可以共用sing方法
+    console.log(ldh.sing === zxy.sing)  //true
+
+    //原型对象的constructor属性
+    //该属性指向构造函数
+    console.log(Star.prototype.constructor)
+
+
+    //对象原型——实例化对象的一个属性，指向构造函数的原型对象
+    //__proto__等价于[[prototype]]
+    //ldh.__proto__ === Star.prototype
+    console.log(ldh.__proto__)
+
+    //对象原型中也有constructor，其指向构造函数
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./lodash.min.js"></script>
+  <script>
+    const obj = {
+      uname: '张三',
+      age: 18
+    }
+    //浅拷贝：拷贝值,更改副本，不会影响原件
+    //但是存在问题：当对象中还有对象时，里层的对象可以改变（因为复杂数据类型的值是地址）
+    //1.使用展开运算符
+    const copy1 = { ...obj }
+    copy1.age = 20
+    // console.log(copy1)  //{uname: '张三', age: 20}
+    //使用assign()
+    const copy2 = {}
+    Object.assign(copy2, obj)
+    copy2.age = 20
+    // console.log(copy2)  //{uname: '张三', age: 20}
+    // console.log(obj)  //{uname: '张三', age: 18}
+
+
+    //深拷贝:直接拷贝对象
+    //1.递归
+    const copy3 = {}
+    function deepcopy(newcopy, obj) {
+      for (let k in obj) {
+        if (obj[k] instanceof Array) {
+          newcopy[k] = []
+          deepcopy(newcopy[k], obj[k])
+        }
+        else if (obj[k] instanceof Object) {
+          newcopy[k] = {}
+          deepcopy(newcopy[k], obj[k])
+        } else {
+          newcopy[k] = obj[k]
+        }
+      }
+    }
+    deepcopy(copy3, obj)
+
+    //2.lodash实现深拷贝
+    const copy4 = _.cloneDeep(obj)
+    console.log(copy4)
+
+    //3.利用JSON实现深拷贝
+    //转换为字符串来拷贝
+    const copy5 = JSON.parse(JSON.stringify(obj))
+    console.log(copy5)
+  </script>
+</body>
+
+</html>

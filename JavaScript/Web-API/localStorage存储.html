@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //存 localStorage.setItem('键', '值')
+    //本地存储是以字符串形式存储的
+    localStorage.setItem('uname', '张三')
+
+    //取 localStorage.getItem('键')
+    console.log(localStorage.getItem('uname'))
+
+    //删 localStorage.removeItem('键')
+    // localStorage.removeItem('uname')
+
+    //改，有则改，无则增
+    localStorage.setItem('uname', '李四')
+
+    /*sessionStorage使用方法和localStorage一样
+    但前者生命周期为关闭浏览器窗口，关闭就没有了 */
+
+    //存储复杂数据类型
+    let obj = {
+      uname: '张三',
+      age: 18,
+      gender: '男'
+    }
+
+    //要将复杂数据类型转换成JSON字符串，再存
+    localStorage.setItem('obj', JSON.stringify(obj))
+    //取时，要把JSON字符串转换为对象
+    console.log(JSON.parse(localStorage.getItem('obj')))
+  </script>
+</body>
+
+</html>

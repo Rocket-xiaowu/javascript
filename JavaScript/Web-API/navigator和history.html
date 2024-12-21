@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charWset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  这是PC端页面
+  <button>后退</button>
+  <button>前进</button>
+  <script>
+    //navigator获取浏览器信息
+    !(function () {
+      const userAgent = navigator.userAgent
+      const android = userAgent.match(/(Andriod);?[\s\/]+([\d.]+)?/)
+      const iphone = userAgent.match(/(iphone\sOS)\s([\d_]+)/)
+      if (android || iphone) {
+        location.href = 'http://www.baidu.com'
+      }
+    })();
+
+    //前进和后退功能
+    const back = document.querySelector('button:first-child')
+    const forward = back.nextElementSibling
+    back.addEventListener('click', function () {
+      //两种方法
+      // history.back()
+      history.go(-1)
+    })
+    forward.addEventListener('click', function () {
+      //两种方法
+      // history.forward()
+      history.go(1)
+    })
+  </script>
+</body>
+
+</html>

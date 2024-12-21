@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="video">
+    <video src="../../images/视频.mp4" controls></video>
+  </div>
+  <script src="./lodash.min.js"></script>
+  <script>
+    const video = document.querySelector('video')
+    video.ontimeupdate = _.throttle(() => {
+      localStorage.setItem('currentTime', video.currentTime)
+    }, 1000)
+
+    video.onloadeddata = () => {
+      video.currentTime = localStorage.getItem('currentTime') || 0
+    }
+  </script>
+</body>
+
+</html>

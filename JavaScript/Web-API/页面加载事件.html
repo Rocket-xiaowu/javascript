@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //等待页面 所有资源 加载完毕，再回去执行回调函数
+    /* window.addEventListener('load', function () {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function () {
+        alert('已经加载好了')
+      })
+    }) */
+    //只需DOM加载完即可，无需等待样式表，图像等的加载
+    //场景：图片未加载出来，但是页面中的按钮已经可以使用
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function () {
+        alert('已经加载好了')
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <button>点击</button>
+</body>
+
+</html>

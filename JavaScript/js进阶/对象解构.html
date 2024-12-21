@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //对象解构是将对象和方法快速批量赋值给一系列变量的简洁语法
+    const obj = {
+      uname: '张三',
+      age: 18
+    }
+    //要求：变量的名字必须和对象内的属性名或方法相同
+    //并且不能和外界的变量冲突
+    /* const { uname, age } = obj
+    console.log(uname)
+    console.log(age)
+ */
+
+    //对象解构的变量名 重新改名
+    //语法：旧变量名：新变量名
+    /* const { uname: username, age } = obj
+    console.log(username)
+    console.log(age) */
+
+    //多级解构
+    const pig = {
+      name: '佩奇',
+      family: {
+        mother: '猪妈妈',
+        father: '猪爸爸',
+        sister: '乔治'
+      },
+      age: 6
+    }
+    const { name, family: { mother, father, sister }, age } = pig
+    console.log(name)
+    console.log(mother)
+    console.log(father)
+    console.log(sister)
+    console.log(age)
+  </script>
+</body>
+
+</html>

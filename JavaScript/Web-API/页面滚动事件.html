@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 3000px;
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      background-color: skyblue;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div>我出来了</div>
+  <script>
+    const div = document.querySelector('div')
+    window.addEventListener('scroll', function () {
+      // console.log('页面滚动了')
+      //scrolltop 被卷去的头部
+      console.log(document.documentElement.scrollTop)
+      if (document.documentElement.scrollTop >= 100) {
+        div.style.display = 'block'
+      } else {
+        div.style.display = 'none'
+      }
+    })
+  </script>
+</body>
+
+</html>

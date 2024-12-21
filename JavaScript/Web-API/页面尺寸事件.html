@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    /*  window.addEventListener('resize', function () {
+       console.log('页面尺寸发生变化了')
+     }) */
+
+    //clientWidth和clientHeight可以检测盒子的大小，不包括padding和margin
+    //offestWidth和offsetHeight可以检测盒子的大小，包括padding和margin
+
+    //offsetLeft和offsetTop可以检测盒子的位置
+    //两者受最近的具有定位功能的祖先元素的影响
+    //若其祖先都没有定位，则按窗口来算
+    const div = document.querySelector('div')
+    console.log(div.offsetTop)
+  </script>
+</body>
+
+</html>
