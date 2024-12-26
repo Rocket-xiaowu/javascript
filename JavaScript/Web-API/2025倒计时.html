@@ -116,6 +116,7 @@
     // 页面刷新随机得到颜色
     const countdown = document.querySelector('.countdown')
     countdown.style.backgroundColor = getRandomColor()
+    setInterval(() => countdown.style.backgroundColor = getRandomColor(), 100)
     // 函数封装 getCountTime
     function getCountTime() {
       // 1. 得到当前的时间戳
