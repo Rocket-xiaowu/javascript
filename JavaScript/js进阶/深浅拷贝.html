@@ -28,7 +28,7 @@
     // console.log(obj)  //{uname: '张三', age: 18}
 
 
-    //深拷贝:直接拷贝对象
+    //深拷贝:直接拷贝对象,此时修改副本，原来的对象不会受到影响，因为两者不共用内存
     //1.递归
     const copy3 = {}
     function deepcopy(newcopy, obj) {
@@ -49,7 +49,9 @@
 
     //2.lodash实现深拷贝
     const copy4 = _.cloneDeep(obj)
+    copy4.age=666
     console.log(copy4)
+    console.log(obj)
 
     //3.利用JSON实现深拷贝
     //转换为字符串来拷贝
